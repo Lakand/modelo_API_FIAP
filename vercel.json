@@ -1,13 +1,8 @@
 {
-    "functions": {
-      "api/api_modelo.py": {
-        "runtime": "python3.9"
-      }
-    },
+    "builds": [
+      { "src": "api_modelo.py", "use": "@vercel/python" }
+    ],
     "routes": [
-      {
-        "src": "/api/.*",
-        "dest": "/api/api_modelo.py"
-      }
+      { "src": "/(.*)", "dest": "api_modelo.py" }
     ]
-  }
+}
